@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.middleware.logging import LogMiddleware
-from app.routes import auth, users, products, orders, payments
+from app.routes import auth, users, products, orders, payments, check
 
 app = FastAPI(
     title="Legacy E-Commerce API",
@@ -17,6 +17,7 @@ app.include_router(users.router)
 app.include_router(products.router)
 app.include_router(orders.router)
 app.include_router(payments.router)
+app.include_router(check.router)  # Include the new check router
 
 @app.get("/")
 def root():
