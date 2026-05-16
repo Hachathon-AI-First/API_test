@@ -60,7 +60,7 @@ def transfer_stock(from_product_id: int, to_product_id: int, quantity: int):
         "transferred": quantity,
         "from_stock": from_product["stock"],
         "to_stock": to_product["stock"]
-    }
+            updated.append(product["id"])
 
 def bulk_price_update(category: str, multiplier: float):
     updated = []
