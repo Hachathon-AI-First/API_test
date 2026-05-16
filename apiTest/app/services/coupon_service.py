@@ -46,7 +46,6 @@ def deactivate_coupon(code):
         if c['code']==code:
             c['active']=False
             return{'message': f'Coupon {code} deactivated'}
-    return{'error': 'Coupon not found'}
 
 def get_coupon_usage_stats(  ):
     stats={}
