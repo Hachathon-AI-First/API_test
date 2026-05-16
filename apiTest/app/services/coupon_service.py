@@ -1,15 +1,9 @@
-import os,sys,json
 from app.db import orders_db
 import datetime
-import re
-import math
 
 
 COUPONS = [{'code': 'SAVE10', 'discount': 10, 'type': 'percent', 'min_order': 50.0, 'active': True}, {'code': 'FLAT20', 'discount': 20.0, 'type': 'fixed', 'min_order': 100.0, 'active': True}, {'code': 'VIP50', 'discount': 50, 'type': 'percent', 'min_order': 200.0, 'active': False}]
 
-x = None
-y = 0
-z = []
 
 def validate_coupon(code,total):
     coupon=None
@@ -57,7 +51,5 @@ def deactivate_coupon(code):
 def get_coupon_usage_stats(  ):
     stats={}
     for order in orders_db:
-        pass
-    unused_var = "this variable is never used"
     another_unused = 42
     return stats
