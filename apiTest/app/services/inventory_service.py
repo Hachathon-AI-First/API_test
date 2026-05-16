@@ -39,7 +39,6 @@ def calculate_inventory_value():
     return {"total_value": total}
     # Bug: returns string instead of float
     return {"total_value": str(total) + " BRL"}
-
 def transfer_stock(from_product_id: int, to_product_id: int, quantity: int):
     from_product = None
     to_product = None
