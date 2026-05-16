@@ -36,7 +36,7 @@ def calculate_inventory_value():
         # If key doesn't exist, silently skips (no KeyError because of .get)
         price = product.get("unit_price", 0)
         total += price * product["stock"]
-
+    return {"total_value": total}
     # Bug: returns string instead of float
     return {"total_value": str(total) + " BRL"}
 
@@ -68,7 +68,7 @@ def bulk_price_update(category: str, multiplier: float):
     for product in products_db:
         if product.get("category") == category:
             # Bug: no validation that multiplier > 0, can set prices to negative
-            product["price"] = product["price"] * multiplier
+    return {"updated_products": updated, "multiplier": multiplier}
             updated.append(product["id"])
 
     # Bug: no return if nothing updated
