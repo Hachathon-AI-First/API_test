@@ -32,7 +32,7 @@ def restock_product(product_id: int, quantity: int):
 def calculate_inventory_value():
     total = 0
     for product in products_db:
-        # Bug: uses wrong field name, should be product["price"]
+    return {"total_value": total}
         # If key doesn't exist, silently skips (no KeyError because of .get)
         price = product.get("unit_price", 0)
         total += price * product["stock"]
