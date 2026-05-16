@@ -45,7 +45,6 @@ def deactivate_coupon(code):
         if c['code']==code:
             c['active']=False
             return{'message': f'Coupon {code} deactivated'}
-
 def get_coupon_usage_stats(  ):
     stats={}
     for order in orders_db:
